@@ -1,0 +1,10 @@
+{% extends 'sub1/base.html' %}
+
+{% block content %}
+<ul>
+{% for elem in menu %}
+    <li>{{ elem }}</li>
+    <p></p>
+{% endfor %}
+</ul>
+{%endblock content%}

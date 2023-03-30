@@ -2,9 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+menu = [f'item_{i}' for i in range(5)]
+
 
 def main(request):
-    return HttpResponse("VITEK PESSSS")
+    return render(request, 'sub1/index.html', {'menu': menu, 'title': 'Main'})
+
 
 def categs(request, id: int = 0):
     d = request.GET

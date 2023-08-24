@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 menu = [f'item_{i}' for i in range(5)]
 
@@ -15,4 +15,5 @@ def categs(request, id: int = 0):
     # if d:
     f = ' '.join(map(str, d.items()))
     s = f'Categs {id=}, params {f if f else "are empty"}'
-    return HttpResponse(s)
+    context = {'users': User.objects.all()}
+    return render(request, 'sub1/categs.html', context=context)

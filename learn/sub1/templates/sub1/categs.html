@@ -1,0 +1,21 @@
+{% extends 'sub1/base.html' %}
+
+{% block mainmenu %}
+<ul>
+{% for elem in menu %}
+    <li>{{ elem }}</li>
+    <p></p>
+{% endfor %}
+</ul>
+{% endblock mainmenu %}
+
+{% block content %}
+<ul>
+{% for user in users %}
+    <li>
+    <p><a href="{{ user.get_abs_url }}">{{ user.nickname }}</a></p>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock content %}
